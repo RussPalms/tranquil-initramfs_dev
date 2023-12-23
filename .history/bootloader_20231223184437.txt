@@ -57,8 +57,8 @@ menuentry "Gentoo - {kernel_version}-{MACHINE_ALIAS}.v{version_number}" {
 Encrypted Normal with one encrypted drive
 =======================================
 
-** Note: The program will auto mount all your encrypted drives as follows BY DEFAULT: /dev/mapper/source_0, /dev/mapper/source_1,
-         /dev/mapper/source_2 ... etc. Thus if you only have one encrypted drive, make sure you name it /dev/mapper/source_0,
+** Note: The program will auto mount all your encrypted drives as follows BY DEFAULT: /dev/mapper/vault_0, /dev/mapper/vault_1,
+         /dev/mapper/vault_2 ... etc. Thus if you only have one encrypted drive, make sure you name it /dev/mapper/vault_0,
          or use its UUID.
          
          OPTIONAL:  You may use enc_targets parameter to specify custom /dev/mapper/<mount_targets> names 
@@ -70,7 +70,7 @@ menuentry "Gentoo - {kernel_version}-{MACHINE_ALIAS}.v{version_number}" {
 
     set root=(hd0,gpt1)
 
-    linux /vmlinuz-{kernel_version}-{MACHINE_ALIAS}.v{version_number} root=/dev/mapper/source_0 enc_drives=/dev/disk/by-id/{disk_name}-part3 triggers=luks quiet
+    linux /vmlinuz-{kernel_version}-{MACHINE_ALIAS}.v{version_number} root=/dev/mapper/vault_0 enc_drives=/dev/disk/by-id/{disk_name}-part3 triggers=luks quiet
     initrd /initrd-{kernel_version}-{MACHINE_ALIAS}.v{version_number}
 }
 
@@ -153,6 +153,6 @@ Encrypted btrfs w/ Mount Options and passphrase (one drive and the / is on a sub
 =======================================
 
 menuentry "Gentoo - {kernel_version}-{MACHINE_ALIAS}.v{version_number}" {
-    linux /kernels/{kernel_version}-{MACHINE_ALIAS}.v{version_number}/vmlinuz root=/dev/mapper/source_0 enc_drives=/dev/disk/by-id/{disk_name}-part4 enc_type=pass options="compress=lzo,defaults,noatime,autodefrag,subvol=corerp/root" triggers=luks quiet
+    linux /kernels/{kernel_version}-{MACHINE_ALIAS}.v{version_number}/vmlinuz root=/dev/mapper/vault_0 enc_drives=/dev/disk/by-id/{disk_name}-part4 enc_type=pass options="compress=lzo,defaults,noatime,autodefrag,subvol=corerp/root" triggers=luks quiet
     initrd /kernels/{kernel_version}-{MACHINE_ALIAS}.v{version_number}/initrd
 }

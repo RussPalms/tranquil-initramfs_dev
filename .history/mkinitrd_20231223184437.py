@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Copyright (C) 2019-2024 Russell Palma <me@russellpalma.com>
+# Copyright (C) 2012-2020 Jonathan Vasquez <jon@xyinn.org>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
